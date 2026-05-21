@@ -1,4 +1,4 @@
-# W0-Day-1-Data-Cleaning-Challenge-for-Emergency-Triage
+# W0 Day 1 Data Cleaning Challenge for Emergency Triage
 In a high-pressure Emergency Department (ED) setting, data entry is often very messy. Assignment 1 focused on cleaning the gender demographics of patients at 'Mercer General Hospital' to ensure that our triage AI system interprets patient data accurately. 
 
 ## Methodology
@@ -6,3 +6,15 @@ The raw dataset contained highly inconsistent entries for Gender, including vary
 - Converting inconsistent strings (e.g., "m", "MALE", "1") into a unified integer system to remove ambiguity for the AI. Males were assigned to `1` and Females were assigned to `0`. 
 - Adding a check to note empty (null) cells. Identifying missing data is critical in a triage system because missing a vital or demographic can lead to major errors.
 - Inclusivity. The code was written to recognise and categorise non-binary gender markers, ensuring the system remains relevant for all patient populations in the region. Other genders were assigned to `2`.
+
+
+# W0 Day 2 Advanced Data Cleaning Challenge
+Contributors: Tyler Baksh, Kaylah Leigertwood-Ollivierre, Mya Symister, Sariana Ramoutar (myself), Zhanna McDonald, Sekou Ruddock
+In an ED, patient vitals must be clean and reliable before they are processed by a machine learning model. Assignment 2 focused on advanced data cleaning and statistical imputation of the **Respiratory Rate (RR)** column. 
+
+## Methodology
+Out group ran a comprehensive check on the raw RR column of the dataset. While the data type was already correctly formatted as numeric, we discovered several missing values (`NaN`).
+- Generated side by side histogram and box plot visualisations to analyse the data's behaviour and point out extreme abnormalities before cleaning.
+- Discovered that the RR distribution was heavily right-skwewd due to critical patients experiencing rapid breathing. Because these outliers pull the clinical `mean` upward, we chose to impute mussing values using the `median` (~18 breaths per min) to maintain a robust, unbiased baseline.
+- Implemented logical safety filter to check for physiologically impossible data entry errors. A strict clinical range threshold (5 to 60 breaths per min) was established. Upon execution, it was confirmed that 100% of the active RR data fell safely within these boundaries.
+- By reviewing distribution changes across histograms and box plots both *before* and *after* the cleaning cycle, the integrity of the adjusted data was verified. 
