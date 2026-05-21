@@ -10,6 +10,7 @@ The raw dataset contained highly inconsistent entries for Gender, including vary
 
 # W0 Day 2 Advanced Data Cleaning Challenge
 Contributors: Tyler Baksh, Kaylah Leigertwood-Ollivierre, Mya Symister, Sariana Ramoutar (myself), Zhanna McDonald, Sekou Ruddock
+
 In an ED, patient vitals must be clean and reliable before they are processed by a machine learning model. Assignment 2 focused on advanced data cleaning and statistical imputation of the **Respiratory Rate (RR)** column. 
 
 ## Methodology
