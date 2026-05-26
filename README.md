@@ -18,11 +18,11 @@ Patient vitals must be mathematically clean and reliable before they are process
 ### Methodology
 - **Pre-Cleaning Visualisation:** generated side-by-side histogram and box plot visualisations to analyse the baseline data distribution and isolate extreme abnormalities before altering any values.
 - **Skew-Aware Imputation:** discovered that the RR distribution was heavily right-skewed due to critical patients experiencing rapid breathing. Because these outliers pull the clinical `mean` upward, we chose to impute missing values using the `median` (~18 breaths per min) to maintain a strong, unbiased baseline.
-- **Physiological Safety Boundaries:** implemented a logical threshold filter (5 to 60 breaths per min) to eliminate impossible data entry errors. Our diagnostic condirmed that 100% of the active, non-corrupted RR records fell safely within these boundaries.
+- **Physiological Safety Boundaries:** implemented a logical threshold filter (5 to 60 breaths per min) to eliminate impossible data entry errors. Our diagnostic confirmed that 100% of the active, non-corrupted RR records fell safely within these boundaries.
 - **Verification:** re-evaluated distribution shifts using post-cleaning visualisations to confirm the data integrity without introducing unexpected distortions.
 
 ## Day 3: Basic Data Visualisation with matplotlib
-Charts are useful for seeing which patients require care first based on plotted vitals and distributions. This is especially helpful in a an ED triage system where nurses must make quick decisions, just by looking at data at a glance. For Assignment 3, I structured 3 distinct plots around specific clinical research questions: 
+Charts are useful for seeing which patients require care first based on plotted vitals and distributions. This is especially helpful in an ED triage system where nurses must make quick decisions, just by looking at data at a glance. For Assignment 3, I structured 3 distinct plots around specific clinical research questions: 
 
 ### 1. Histogram: Respiratory Rate (RR) Distribution
 *"What proportion of Emergency Department patients present with abnormal respiratory rates (bradypnea or tachypnea) compared to the normal clinical baseline of 12–20 breaths per minute?*
@@ -45,7 +45,7 @@ An AI model can only see what is inside its dataset. For Assignment 5, I analyse
 ### Proposed Additions
 - **Oxygen Saturation (SpO2):** measured via pulse oximetry. It tracks the percentage of haemoglobin bound to oxygen.
 - **Capillary Blood Glucose (CBG):** a rapid finger-prick test to track blood sugar.
-- **Capillar Refill Time (CRT):** a quick physical test measuring peripheral blood flow.
+- **Capillary Refill Time (CRT):** a quick physical test measuring peripheral blood flow.
 
 ## Day 6: AI Triage Logic Framework
 The final capstone of Week 0 was integrating data cleaning rules, multi-variable interactions and missing feature checks into a structured, step-by-step instruction framework for an AI-assisted digital triage system. 
