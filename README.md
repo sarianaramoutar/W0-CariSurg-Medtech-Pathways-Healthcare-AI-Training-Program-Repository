@@ -35,3 +35,23 @@ This scatter plot flags systemic failure where the heart and lungs speed up toge
 ### 3. Scatter Plot: Occult Shock Identification (Pulse Rate vs. Systolic Blood Pressure)
 *"How many patients have a dangerous Shock Index, and does this score help us catch hidden shock in patients who otherwise look normal?"* 
 The **Shock Index ({Pulse} / {SBP})** is a critical tool for detecting "occult shock" — a deceptive state where a patient is dangerously ill but their individual vital signs still appear normal. In hemorrhages, sepsis, or massive trauma, the heart beats rapidly to compensate for dropping blood volume, keeping the SBP temporarily stable. The normal baseline is from `0.5` to `0.7`. Elevated Risk from `0.8` to `0.9`, and Critical Circulatory Collapse >= `1.0` (Occurs when heart rate equals or exceeds SBP, signaling immediate crashing status).
+
+## Day 4: Vital Sign Deep Dive - Respiratory Rate (RR)
+To design clinical AI algorithms, we have to first understand the physiology behind each metric. Assignment 4 focused on an exploration of RR as a primary clinical marker for acute patient distress. 
+
+## Day 5: Missing Vital Metrics for Comprehensive Triage
+An AI model can only see what is inside its dataset. For Assignment 5, I analysed three other important clinical features that were missing from the baseline dataset. 
+
+### Proposed Additions
+- **Oxygen Saturation (SpO2):** measured via pulse oximetry. It tracks the percentage of haemoglobin bound to oxygen.
+- **Capillary Blood Glucose (CBG):** a rapid finger-prick test to track blood sugar.
+- **Capillar Refill Time (CRT):** a quick physical test measuring peripheral blood flow.
+
+## Day 6: AI Triage Logic Framework
+The final capstone of Week 0 was integrating data cleaning rules, multi-variable interactions and missing feature checks into a structured, step-by-step instruction framework for an AI-assisted digital triage system. 
+
+### System Architecture Highlights
+- **[STAGE 1] Immediate Trauma Override:** a high-priority visual bypass condition (`Is_Visual_Trauma_Emergency`) instantly routes major injuries (e.g., active hemorrhages, penetrating trauma) straight to a `Level 1` emergency, bypassing calculation times completely.
+- **[STAGE 2] Range Verification & Imputation:** filters out data entry typos and uses a two-tier lookup (Individual EHR history falling back or using a safe population median) to patch missing data, accompanied by a warning for the nurse.
+- **[STAGE 3 & 4] Clinical Multi-Variable Scoring:** adjusts thresholds for chronic baseline conditions and scores multi-variable interactions simultaneously. 
+- **[STAGE 5 & OUTPUT] Point Scoring & Fail-Safe Mechanisms:** calculates scores into 4 clear levels (Resuscitation down to Non-Urgent). The system builds in explicit safeguards for regional Caribbean hospitals, utilizing a **local-first SQLite database** to protect data during sudden power grids failures, a **digital aging score** to prioritize patients waiting in crowded rooms, and a **computer vision alert** to spot patients collapsing silently in the waiting hall. 
