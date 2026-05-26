@@ -33,5 +33,5 @@ This plot isolates patients falling outside the healthy resting baseline, where 
 This scatter plot flags systemic failure where the heart and lungs speed up together to maintain homeostasis. By plotting threshold boundaries (Pulse at 100 bpm, RR at 20 breaths/min), the upper-right quadrant serves as a clear visual "danger zone" to spot patients in physiological shock.
 
 ### 3. Scatter Plot: Occult Shock Identification (Pulse Rate vs. Systolic Blood Pressure)
-*"How many patients have a dangerous Shock Index, and does this score help us catch hidden shock in patients who otherwise look normal?"*
+*"How many patients have a dangerous Shock Index, and does this score help us catch hidden shock in patients who otherwise look normal?"* 
 The **Shock Index ({Pulse} / {SBP})** is a critical tool for detecting "occult shock" — a deceptive state where a patient is dangerously ill but their individual vital signs still appear normal. In hemorrhages, sepsis, or massive trauma, the heart beats rapidly to compensate for dropping blood volume, keeping the SBP temporarily stable. The normal baseline is from `0.5` to `0.7`. Elevated Risk from `0.8` to `0.9`, and Critical Circulatory Collapse >= `1.0` (Occurs when heart rate equals or exceeds SBP, signaling immediate crashing status).
